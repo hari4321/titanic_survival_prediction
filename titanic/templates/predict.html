@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/predict.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <p><strong>Ticket Class</strong> sholud be as aninteger which ranges from 0 to 2. 0 corresponds to First class
+            and 1 and 2 corresponds to Second and third respectivly</p>
+        <p><strong>Embarked</strong> sholud be as an integer which is wither 0 or 1</p>
+        <p><strong>Gender</strong> sholud be as an integer which is either 0 or 1. 0 corresponds to Male
+            and 1 corresponds to Female</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+
+<div class="col-md-10 mx-auto col-lg-5 mb-4">
+    <form class="p-4 p-md-5 border rounded-3 form-bg" action="{% url 'result' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="age" placeholder="45" name="age" />
+                    <label for="floatingInput">Age</label>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="pclass" placeholder="45" name="pclass" />
+                    <label for="floatingInput">Ticket Class</label>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="sibsp" placeholder="45" name="sibsp" />
+                    <label for="floatingPassword">Number of Siblings / Spouses</label>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="parch" placeholder="45" name="parch" />
+                    <label for="floatingInput">Number of Parents / Children</label>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="fare" placeholder="FBS" name="fare" />
+                    <label for="floatingPassword">Fare</label>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="embarked" placeholder="45" name="embarked" />
+                    <label for="floatingInput">Embarked</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="gender" placeholder="Gender" name="gender" />
+                    <label for="floatingPassword">Gender</label>
+                </div>
+            </div>
+
+            <hr class="my-4" />
+            <button class="w-100 btn btn-lg btn-dark" type="submit">
+                Predict
+            </button>
+    </form>
+</div>
+
+{% endblock %}

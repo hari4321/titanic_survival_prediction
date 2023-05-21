@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/developer.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="col-md-10 mx-auto col-lg-5 mb-5">
+        <div class="p-4 p-md-5 border rounded-3 content">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <img class="img-fluid" src="{% static 'images/photo.jpeg' %}" height="820" width="794">
+                    <div class="name">Hariprasad S</div>
+                    <div class="role">Full Stack Developer</div>
+                    <div class="row">
+                        <div class="col-6 sm-links"><a href="https://github.com/hari4321"><i
+                                    class="fa-brands fa-github fa-2xl"></i></a></div>
+                        <div class="col-6 sm-links"><a href="https://www.linkedin.com/in/hariprasad-s-b35a61225/"><i
+                                    class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                        <div class="col-6 sm-links"><a href="mailto: hariprasad122333@gmail.com.com"><i
+                                    class="fa-solid fa-envelope fa-2xl"></i></a></div>
+                        <div class="col-6 sm-links"><a href="https://twitter.com/login"><i
+                                    class="fa-brands fa-square-twitter fa-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/0e793ab290.js" crossorigin="anonymous"></script>
+{% endblock %}
